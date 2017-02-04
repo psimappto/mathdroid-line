@@ -1,5 +1,6 @@
 const Bot = require('node-line-messaging-api')
 const metadelta = require('metadelta')
+const Messages = Bot.Messages
 
 const SECRET = '8de21774bc46215db590f044549df3c6' // Line@ APP SECRET
 
@@ -25,8 +26,3 @@ bot.on('message', m => {
   console.log(m.source[`${m.source.type}Id`])
   return bot.replyMessage(m.source[`${m.source.type}Id`], msgs.commit())
 })
-
-
-let msgs = new Messages()
-
-msgs.addText('HELLO WORLD!').addText({text: 'harambe4lyf'})

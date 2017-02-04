@@ -2,6 +2,12 @@
   "name": "mathdroid",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "7.x.x"
+  },
+  "scripts": {
+    "start": "node index"
+  },
   "repository": {},
   "license": "MIT",
   "dependencies": {
