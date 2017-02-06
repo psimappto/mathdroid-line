@@ -14,5 +14,8 @@
     "fuzzyset.js": "^0.0.1",
     "metadelta": "^1.0.6",
     "node-line-messaging-api": "next"
+  },
+  "devDependencies": {
+    "firebase-admin": "^4.1.0"
   }
 }

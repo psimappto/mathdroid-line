@@ -1,9 +1,11 @@
 const Bot = require('node-line-messaging-api')
 const metadelta = require('metadelta')
 const FuzzySet = require('fuzzyset.js')
-const Messages = Bot.Messages
 
-const keys = FuzzySet([].concat(Object.keys(metadelta)))
+const package = require('./package')
+const Messages = Bot.Messages
+const funcs = [].concat(Object.keys(metadelta))
+const keys = FuzzySet(funcs)
 const SECRET = '8de21774bc46215db590f044549df3c6' // Line@ APP SECRET
 
 const TOKEN = 'k8x3ixavhusSLf6wJZ84L/Fy/wzoymqk7a2+KqVp0bJCZwho053vltVE5WX1jpAe82463ktsz0SxCtGS+se2En/cS71H1WlGDrjx0jSz+COj/FHCAU/H98UUOWuNR2cLdVO3SxPkXiUADd8MHGmobgdB04t89/1O/w1cDnyilFU=' // Line@ issued TOKEN
@@ -26,7 +28,7 @@ bot.on('text', m => {
   let [command, ...statement] = query.split(' ') || [query]
   if (statement.length < 1) {
     let noStatement = new Messages()
-    return bot.replyMessage(m.replyToken, noStatement.addText(`Queries must follow this structure: [COMMAND] [STATEMENT] ;)\n\nCannot process command ${command}.`).commit())
+    return bot.replyMessage(m.replyToken, noStatement.addText(`Queries must follow this structure: [COMMAND] [EXPRESSION]\n\nCannot process command ${command}.`).commit())
   }
   let result = 'I currently cannot compute that.'
   // console.log(keys.get(command))
@@ -52,7 +54,7 @@ bot.on('text', m => {
       }
     }
     computed = computed || `No result for doing ${method} on ${statement.join(' ')}`
-    result = `Result: ${computed}`
+    result = `Operation: ${method}\nExpression: ${statement}\nResult: ${computed}`
   }
   msgs
     .addText(result)
