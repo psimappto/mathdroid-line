@@ -1,4 +1,4 @@
-const Bot = require('../node-line-messaging-api/build')
+const Bot = require('node-line-messaging-api')
 const metadelta = require('metadelta')
 const FuzzySet = require('fuzzyset.js')
 const Messages = Bot.Messages
