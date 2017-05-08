@@ -6,9 +6,9 @@ const package = require('./package')
 const Messages = Bot.Messages
 const funcs = [].concat(Object.keys(metadelta))
 const keys = FuzzySet(funcs)
-const SECRET = '8de21774bc46215db590f044549df3c6' // Line@ APP SECRET
+const SECRET = '82c0056ca4312d125939533fb29e149f' // Line@ APP SECRET
 
-const TOKEN = 'k8x3ixavhusSLf6wJZ84L/Fy/wzoymqk7a2+KqVp0bJCZwho053vltVE5WX1jpAe82463ktsz0SxCtGS+se2En/cS71H1WlGDrjx0jSz+COj/FHCAU/H98UUOWuNR2cLdVO3SxPkXiUADd8MHGmobgdB04t89/1O/w1cDnyilFU=' // Line@ issued TOKEN
+const TOKEN = 'uvlk18Xh8Mb6XkyAiP3FKr820XKQRcv8BPFy1JZ01nu05+2l4iyfLihVMtPu+j9JDmw0DO+1d8NlhKUqdekRNEP9YzAOyN4zSvNZWnl8jQEhGKdtMuuTaSVzzvUuMSiB1Z+J8Qt7GJ12uiT2kQtCMwdB04t89/1O/w1cDnyilFU=' // Line@ issued TOKEN
 
 const PORT = process.env.PORT || 3002
 
